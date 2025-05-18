@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
-const mongodb = require('./db/connection');
+const mongodb = require('./DB/connection');
 const proRoutes = require('./routes/index');
 
 const port = process.env.PORT || 8080;
@@ -13,7 +13,7 @@ app
     res.setHeader('Access-Control-Allow-Origin', '*');
     next();
   })
-  .use('/pro', proRoutes);
+  .use('/', proRoutes);
 
 mongodb.initDb((err, mongodb) => {
   if (err) {
