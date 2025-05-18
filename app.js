@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
-const mongodb = require('./DB/connection');
+const mongodb = require('./db/connection');
 const proRoutes = require('./routes/index');
 
 const port = process.env.PORT || 8080;
